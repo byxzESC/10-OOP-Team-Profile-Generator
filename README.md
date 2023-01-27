@@ -7,7 +7,10 @@
 
 ## Description
 
-    It is a simple team profile generator using command prompt.     
+    It is a simple team profile generator using command prompt. 
+
+    Enter your team's information and this generator will generate a HTML page 
+    for your team members.      
 
 ## Table of Contents (Optional)
 
