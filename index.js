@@ -55,13 +55,20 @@ addMembers = (member) => {
     } else if (member === 'intern') {
         internMemberPrompt();
     } else {
-        // generate a portfolio
+        // Acceptance --- WHEN I am prompted for my team members and their information
+        // THEN an HTML file is generated that displays a nicely formatted team roster based on user input
         console.log('Generating team portfolio');
         let currentPortfolio = generatePortfolio.generateTeamPortfolio(team);
         console.log(currentPortfolio);
         fs.appendFile('./dist/examplePortfolio.html', currentPortfolio, (err) => {
             if(err) throw err;
             console.log('the err is ', err);
+        })
+        let currentCSS = generatePortfolio.generateCSS();
+        fs.appendFile('./dist/style.css', currentCSS, (err) => {
+            if(err) {
+            console.log('the err is ', err)
+            };
         })
     }
 }
