@@ -41,7 +41,7 @@ function memberSection(member) {
     }
 }
 
-function generateTeamPortfolio(data) {
+function generateTeamProfile(data) {
     return `<!DOCTYPE html>
 <html lang="en">
 
@@ -131,4 +131,4 @@ function generateCSS () {
 `}
 
 
-module.exports = { generateTeamPortfolio, generateCSS};
+module.exports = { generateTeamProfile, generateCSS};

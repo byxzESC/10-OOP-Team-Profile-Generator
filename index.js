@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { default: Choices } = require('inquirer/lib/objects/choices');
-const generatePortfolio = require('./src/generatePortfolio');
+const generateProfile = require('./src/generateProfile');
 
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
@@ -57,14 +57,14 @@ addMembers = (member) => {
     } else {
         // Acceptance --- WHEN I am prompted for my team members and their information
         // THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-        console.log('Generating team portfolio');
-        let currentPortfolio = generatePortfolio.generateTeamPortfolio(team);
-        console.log(currentPortfolio);
-        fs.appendFile('./dist/examplePortfolio.html', currentPortfolio, (err) => {
+        let currentProfile = generateProfile.generateTeamProfile(team);
+
+        fs.appendFile('./dist/exampleProfile.html', currentProfile, (err) => {
             if(err) throw err;
             console.log('the err is ', err);
         })
-        let currentCSS = generatePortfolio.generateCSS();
+        
+        let currentCSS = generateProfile.generateCSS();
         fs.appendFile('./dist/style.css', currentCSS, (err) => {
             if(err) {
             console.log('the err is ', err)
